@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site';
+import { Content as About } from '../about.md';
+---
+
+<Base>
+  <section class="page-head measure">
+    <h1>{SITE.name}</h1>
+    <div class="prose lede-prose">
+      <About />
+    </div>
+    {
+      (SITE.email || SITE.links.length > 0) && (
+        <p class="links">
+          {SITE.email && <a href={`mailto:${SITE.email}`}>{SITE.email}</a>}
+          {SITE.links.map((l) => <a href={l.url}>{l.label}</a>)}
+        </p>
+      )
+    }
+  </section>
+</Base>
