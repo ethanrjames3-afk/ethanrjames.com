@@ -19,6 +19,9 @@ const work = defineCollection({
       sort: z.number(),
       summary: z.string(),
       cover: image().optional(),
+      // Optional different image for the home page card (defaults to the cover).
+      thumb: image().optional(),
+      thumbAlt: z.string().optional(),
       coverAlt: z.string().optional(),
       // Optional looping video at the top of the page, from public/ (e.g. /media/clip.mp4). The cover is its poster.
       video: z.string().optional(),

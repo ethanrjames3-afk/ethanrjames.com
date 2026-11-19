@@ -8,6 +8,8 @@ summary: As a freshman I built my team's entire rocket for NASA Student Launch. 
 cover: ../../assets/work/high-school-rocketry/tarc-launch-still.jpg
 coverAlt: A TARC rocket leaving its launch rail under a blue sky
 video: /media/tarc-launch.mp4
+thumb: ../../assets/work/high-school-rocketry/team-with-rocket.jpg
+thumbAlt: Our high school rocketry team standing next to Nighthawk I
 gallery:
   - src: ../../assets/work/high-school-rocketry/launch.jpg
     caption: Student Launch full-scale test flight

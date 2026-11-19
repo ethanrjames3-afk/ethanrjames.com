@@ -64,13 +64,13 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         projects.map((p) => (
           <li>
             <a class="card" href={`/work/${p.id}/`}>
-              {p.data.cover && (
+              {(p.data.thumb ?? p.data.cover) && (
                 <Image
-                  src={p.data.cover}
-                  alt={p.data.coverAlt ?? ''}
+                  src={(p.data.thumb ?? p.data.cover)!}
+                  alt={(p.data.thumb ? p.data.thumbAlt : p.data.coverAlt) ?? ''}
                   widths={[400, 800]}
                   sizes="(min-width: 42rem) 20rem, 100vw"
-                  class:list={['card-img', p.data.coverFit]}
+                  class:list={['card-img', p.data.thumb ? 'thumb' : p.data.coverFit]}
                 />
               )}
               <span class="card-title">{p.data.title}</span>

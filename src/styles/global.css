@@ -54,7 +54,7 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 .page-head { padding: 14vh 0 2rem; }
 
 .home-head { padding-top: 10vh; }
-.portrait { display: block; width: 8.5rem; height: 8.5rem; object-fit: cover; object-position: 50% 30%; border-radius: 50%; margin: 0 0 1.75rem; }
+.portrait { display: block; width: 8.5rem; height: 8.5rem; object-fit: cover; border-radius: 50%; margin: 0 0 1.75rem; }
 
 .meta { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-3); }
 
@@ -67,7 +67,8 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 .cards, .rows { list-style: none; margin: 0; padding: 0; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 2rem 1.5rem; }
 .card { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; }
-.card-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--rule); margin-bottom: 0.6rem; }
+.card-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: 6px; background: var(--rule); margin-bottom: 0.6rem; }
+.card-img.thumb { object-position: 50% 25%; }
 .card-img.contain { object-fit: contain; background: #fff; border: 1px solid var(--rule); }
 .card-title { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; }
 .card-summary { font-size: 1rem; line-height: 1.45; color: var(--ink-2); margin-top: 0.2rem; }
