@@ -13,8 +13,9 @@ const work = defineCollection({
       kind: z.enum(['job', 'project']),
       org: z.string().optional(),
       role: z.string(),
-      years: z.coerce.string(), // "2019" or "2019–2020"
-      // Sorts newest first: use the year the work ended.
+      // Shown for jobs only. "2019" or "2019–2020".
+      years: z.coerce.string().optional(),
+      // Sorts newest first. For jobs, use the year the work ended.
       sort: z.number(),
       summary: z.string(),
       cover: image().optional(),
