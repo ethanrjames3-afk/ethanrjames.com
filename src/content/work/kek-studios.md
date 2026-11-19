@@ -13,6 +13,9 @@ gallery:
   - src: ../../assets/work/kek-studios/railyard-runaway.jpg
     caption: Railyard Runaway. Play the free demo ↗
     href: https://studio.engine.io/share/kek-studios/railyard-runaway/3/42
+  - src: ../../assets/work/kek-studios/island-flight.jpg
+    caption: Island Flight. Play the free demo ↗
+    href: https://studio.engine.io/share/kek-studios/island-flight/3/15
 ---
 
 Since May 2026 I've been building and publishing digital games on my own as Kek Studios, as a full-stack game developer.
@@ -20,4 +23,4 @@ Since May 2026 I've been building and publishing digital games on my own as Kek 
 - My games have brought in over $300,000 in revenue.
 - My first release grew profit 4x month over month.
 
-Try the free demos of two of my games below. Each opens on Engine in a new tab.
+Try the free demos of three of my games below. Each opens on Engine in a new tab.
