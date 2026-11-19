@@ -35,6 +35,28 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     }
   </section>
 
+  <section class="section" aria-labelledby="experience">
+    <h2 id="experience" class="section-title">Experience</h2>
+    <ul class="rows">
+      {
+        jobs.map((j) => {
+          const Row = j.body?.trim() ? 'a' : 'div';
+          return (
+            <li>
+              <Row class="row" href={Row === 'a' ? `/work/${j.id}/` : undefined}>
+                <span class="row-main">
+                  <span class="row-title">{j.data.org}</span>
+                  <span class="meta">{j.data.role}</span>
+                </span>
+                <span class="meta row-years">{j.data.years}</span>
+              </Row>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+
   <section class="section" aria-labelledby="projects">
     <h2 id="projects" class="section-title">Projects</h2>
     <ul class="cards">
@@ -59,28 +81,6 @@ const jobs = all.filter((e) => e.data.kind === 'job');
             </a>
           </li>
         ))
-      }
-    </ul>
-  </section>
-
-  <section class="section" aria-labelledby="experience">
-    <h2 id="experience" class="section-title">Experience</h2>
-    <ul class="rows">
-      {
-        jobs.map((j) => {
-          const Row = j.body?.trim() ? 'a' : 'div';
-          return (
-            <li>
-              <Row class="row" href={Row === 'a' ? `/work/${j.id}/` : undefined}>
-                <span class="row-main">
-                  <span class="row-title">{j.data.org}</span>
-                  <span class="meta">{j.data.role}</span>
-                </span>
-                <span class="meta row-years">{j.data.years}</span>
-              </Row>
-            </li>
-          );
-        })
       }
     </ul>
   </section>
