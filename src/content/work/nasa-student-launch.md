@@ -10,7 +10,7 @@ cover: ../../assets/work/nasa-student-launch/drone-before-flight.jpg
 coverAlt: The drone in the open payload bay of the rocket before flight
 gallery:
   - src: ../../assets/work/nasa-student-launch/on-the-pad.jpg
-    caption: On the pad
+    caption: On the pad for the full-scale test flight
   - src: ../../assets/work/nasa-student-launch/team-in-lab.jpg
     caption: In the lab
   - src: ../../assets/work/nasa-student-launch/drone-on-charging-station.jpg
