@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props as { entry: CollectionEntry<'work'> };
-const { title, kind, org, role, years, summary, cover, coverAlt, gallery } = entry.data;
+const { title, kind, org, role, years, summary, cover, coverAlt, video, gallery } = entry.data;
 const { Content } = await render(entry);
 ---
 
@@ -25,15 +25,19 @@ const { Content } = await render(entry);
     </header>
 
     {
-      cover && (
-        <Image
-          src={cover}
-          alt={coverAlt ?? ''}
-          widths={[600, 1000, 1600]}
-          sizes="(min-width: 42rem) 42rem, 100vw"
-          class="entry-cover"
-          loading="eager"
-        />
+      video ? (
+        <video class="entry-cover" src={video} poster={cover?.src} autoplay muted loop playsinline aria-label={coverAlt} />
+      ) : (
+        cover && (
+          <Image
+            src={cover}
+            alt={coverAlt ?? ''}
+            widths={[600, 1000, 1600]}
+            sizes="(min-width: 42rem) 42rem, 100vw"
+            class="entry-cover"
+            loading="eager"
+          />
+        )
       )
     }
 

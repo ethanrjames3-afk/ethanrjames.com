@@ -20,6 +20,8 @@ const work = defineCollection({
       summary: z.string(),
       cover: image().optional(),
       coverAlt: z.string().optional(),
+      // Optional looping video at the top of the page, from public/ (e.g. /media/clip.mp4). The cover is its poster.
+      video: z.string().optional(),
       // 'contain' shows the whole cover on the home page card (good for diagrams); 'cover' crops to fill.
       coverFit: z.enum(['cover', 'contain']).default('cover'),
       gallery: z

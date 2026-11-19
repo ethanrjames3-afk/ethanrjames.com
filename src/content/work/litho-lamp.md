@@ -5,11 +5,15 @@ org: litho-lamp.com
 role: Designer and Developer
 sort: 2026
 summary: A free web app that turns your photos into 3D-printable lithophane lamp shades.
-cover: ../../assets/work/litho-lamp/lamp-shade.jpg
-coverAlt: A 3D preview of a tapered lithophane lamp shade made from a photo of a rocky coast
+cover: ../../assets/work/litho-lamp/printed-lamp.jpg
+coverAlt: A printed lithophane lamp shade, lit from inside, showing a photo of a house's front porch
+video: /media/litho-lamp.mp4
 gallery:
   - src: ../../assets/work/litho-lamp/litho-lamp-app.jpg
     caption: Try it at litho-lamp.com ↗
+    href: https://litho-lamp.com/
+  - src: ../../assets/work/litho-lamp/lamp-shade.jpg
+    caption: Previewing a shade in 3D
     href: https://litho-lamp.com/
 ---
 
