@@ -5,7 +5,7 @@ org: Vanderbilt Aerospace Design Lab
 role: Payload and Manufacturing Engineer
 years: 2019–2020
 sort: 2020.5
-summary: A rocket that carries a drone, lands, reorients itself, opens up and launches the drone. Won the vehicle design award.
+summary: A rocket that lands, reorients itself, opens up and launches a drone. Won NASA Student Launch and the Best Vehicle Design Award.
 cover: ../../assets/work/nasa-student-launch/drone-before-flight.jpg
 coverAlt: The drone in the open payload bay of the rocket before flight
 gallery:
@@ -37,7 +37,9 @@ gallery:
     caption: How the UAV retention system works
 ---
 
-The Vanderbilt Aerospace Design Lab are seven-time NASA Student Launch champions. That year we won the vehicle design award, given for the most innovative and creative vehicle design while maximizing safety.
+In 2020 our team [won NASA Student Launch](https://engineering.vanderbilt.edu/news/2020/vanderbilt-rocketeers-win-seventh-nasa-launch-national-title), beating 45 other universities for the Vanderbilt Aerospace Design Lab's seventh national title. We also won the Best Vehicle Design Award for the most creative, innovative and safety-conscious rocket, a first for the lab, and placed second for payload design.
+
+It was full circle for me: I'd [built my high school team's Student Launch rocket as a freshman](/work/high-school-rocketry/).
 
 I was a payload and manufacturing engineer from August 2019 to March 2020, on the small team that designed, built and tested the drone's deployment system and its recharging station. After landing, the payload bay reorients itself, opens its doors and releases a drone from its charging station to take off.
 

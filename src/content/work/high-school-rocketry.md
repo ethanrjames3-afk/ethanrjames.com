@@ -16,5 +16,7 @@ gallery:
 
 In high school I competed in two rocketry programs.
 
-- **NASA Student Launch:** as a freshman, I built our team's entire rocket.
-- **Team America Rocketry Challenge (TARC):** smaller rockets, like the one in the launch photo.
+- **NASA Student Launch:** as a freshman, I was the only one on the team who had built rockets before, so I built our entire rocket.
+- **Team America Rocketry Challenge (TARC):** the smaller rockets in the photos are from TARC.
+
+It came full circle in 2020, when my Vanderbilt team won NASA Student Launch: see the [NASA Student Launch](/work/nasa-student-launch/) project.
