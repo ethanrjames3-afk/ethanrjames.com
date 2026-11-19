@@ -53,6 +53,22 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 
 .page-head { padding: 14vh 0 2rem; }
 
+.home-head { padding-top: 10vh; }
+.portrait { display: block; width: 8.5rem; height: 8.5rem; object-fit: cover; object-position: 50% 30%; border-radius: 50%; margin: 0 0 1.75rem; }
+
+/* Photography */
+.photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.photo-strip img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+.photo-strip a:hover img { opacity: 0.85; }
+.more { font-family: var(--sans); font-size: 0.95rem; margin: 1rem 0 0; }
+.photo-wall {
+  width: min(72rem, 100vw - 2.5rem); position: relative; left: 50%; transform: translateX(-50%);
+  columns: 3 18rem; column-gap: 0.75rem; padding-bottom: 2rem;
+}
+.photo-wall a { display: block; margin: 0 0 0.75rem; break-inside: avoid; }
+.photo-wall img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.photo-wall a:hover img { opacity: 0.9; }
+
 .meta { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-3); }
 
 /* Home page sections */
@@ -91,6 +107,7 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 .gallery figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-3); margin-top: 0.5rem; }
 
 .lede, .lede-prose p { font-size: 1.35rem; line-height: 1.5; color: var(--ink-2); margin: 0 0 1rem; }
+.lede-prose p.edu { font-family: var(--sans); font-size: 0.95rem; color: var(--ink-3); margin-top: 0.75rem; }
 
 .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 2rem 0 0; font-family: var(--sans); font-size: 1rem; }
 

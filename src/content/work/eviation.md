@@ -2,16 +2,27 @@
 title: Eviation
 kind: job
 org: Eviation
-role: Project Engineer, then Project Manager
-years: 2021–2023
-sort: 2023
-summary: Took Eviation's prototype electric aircraft through the safety-of-flight process to first flight, then led its energy ecosystem.
-cover: ../../assets/work/eviation/alice-takeoff.jpg
-coverAlt: Eviation's Alice electric aircraft taking off
+role: Project Engineer, then Project Manager, Powertrain
+years: 2021–2024
+sort: 2024
+summary: Led the safety-of-flight process for the first flight of the world's largest all-electric aircraft, then managed its 1.5 MW powertrain.
+cover: ../../assets/work/eviation/alice-first-flight.jpg
+coverAlt: Eviation's Alice electric aircraft lifting off on its first flight
+gallery:
+  - src: ../../assets/work/eviation/alice-hangar.jpg
+    caption: Alice in the hangar
+  - src: ../../assets/me/portrait-alice.jpg
+    caption: Me with Alice
 ---
 
-I joined Eviation as a project engineer reporting directly to the CTO. I ran task management and tracking for the R&D department.
+I joined Eviation as a project engineer in September 2021, reporting directly to the CTO.
 
-I managed the safety-of-flight process for our prototype aircraft through to a successful first flight.
+- Led the safety-of-flight (SOF) process for the first flight of Alice, the world's largest all-electric aircraft.
+- Managed verification and validation of safety-critical requirements across more than 25 safety reviews.
+- Wrote company-wide standard operating procedures for risk mitigation and task management.
 
-I was then promoted to project manager of the Alice energy ecosystem: the infrastructure needed to operate an electric aircraft.
+In September 2022 I became project manager for the powertrain, until December 2024.
+
+- Managed concept development and execution of a 1.5 MW electric airplane powertrain.
+- Coordinated supplier engagement.
+- Led the concepts for ground support and charging infrastructure.

@@ -9,6 +9,10 @@ summary: A rocket that carries a drone, lands, reorients itself, opens up and la
 cover: ../../assets/work/nasa-student-launch/drone-before-flight.jpg
 coverAlt: The drone in the open payload bay of the rocket before flight
 gallery:
+  - src: ../../assets/work/nasa-student-launch/on-the-pad.jpg
+    caption: On the pad
+  - src: ../../assets/work/nasa-student-launch/team-in-lab.jpg
+    caption: In the lab
   - src: ../../assets/work/nasa-student-launch/drone-on-charging-station.jpg
     caption: Drone on its charging station
   - src: ../../assets/work/nasa-student-launch/mission-sequence.jpg

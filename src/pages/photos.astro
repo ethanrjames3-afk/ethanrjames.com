@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { photos } from '../photos';
+---
+
+<Base title="Photography" description="Photographs by Ethan R. James.">
+  <article class="entry">
+    <p class="back"><a href="/">← Ethan R. James</a></p>
+    <header class="entry-head">
+      <h1>Photography</h1>
+    </header>
+  </article>
+  <div class="photo-wall">
+    {
+      photos.map((p) => (
+        <a href={p.src.src}>
+          <Image src={p.src} alt={p.alt} widths={[500, 900]} sizes="(min-width: 64rem) 20rem, (min-width: 40rem) 45vw, 100vw" />
+        </a>
+      ))
+    }
+  </div>
+</Base>

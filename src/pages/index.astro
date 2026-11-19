@@ -4,6 +4,8 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site';
 import { Content as About } from '../about.md';
+import { featured } from '../photos';
+import portrait from '../assets/me/portrait-alice.jpg';
 
 const all = (await getCollection('work')).sort((a, b) => b.data.sort - a.data.sort);
 const projects = all.filter((e) => e.data.kind === 'project');
@@ -11,7 +13,15 @@ const jobs = all.filter((e) => e.data.kind === 'job');
 ---
 
 <Base>
-  <section class="page-head measure">
+  <section class="page-head home-head">
+    <Image
+      src={portrait}
+      alt="Ethan standing in front of Eviation's Alice aircraft"
+      widths={[240, 480]}
+      sizes="10rem"
+      class="portrait"
+      loading="eager"
+    />
     <h1>{SITE.name}</h1>
     <div class="prose lede-prose">
       <About />
@@ -71,5 +81,19 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         ))
       }
     </ul>
+  </section>
+
+  <section class="section" aria-labelledby="photography">
+    <h2 id="photography" class="section-title">Photography</h2>
+    <div class="photo-strip">
+      {
+        featured.map((p) => (
+          <a href="/photos/">
+            <Image src={p.src} alt={p.alt} widths={[300, 600]} sizes="(min-width: 42rem) 13rem, 33vw" />
+          </a>
+        ))
+      }
+    </div>
+    <p class="more"><a href="/photos/">All photos →</a></p>
   </section>
 </Base>
