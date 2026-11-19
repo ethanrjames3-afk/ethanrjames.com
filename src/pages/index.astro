@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site';
 import { Content as About } from '../about.md';
-import { featured } from '../photos';
 import portrait from '../assets/me/portrait-alice.jpg';
 
 const all = (await getCollection('work')).sort((a, b) => b.data.sort - a.data.sort);
@@ -84,19 +83,5 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         })
       }
     </ul>
-  </section>
-
-  <section class="section" aria-labelledby="photography">
-    <h2 id="photography" class="section-title">Photography</h2>
-    <div class="photo-strip">
-      {
-        featured.map((p) => (
-          <a href="/photos/">
-            <Image src={p.src} alt={p.alt} widths={[300, 600]} sizes="(min-width: 42rem) 13rem, 33vw" />
-          </a>
-        ))
-      }
-    </div>
-    <p class="more"><a href="/photos/">All photos →</a></p>
   </section>
 </Base>

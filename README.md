@@ -11,8 +11,6 @@ A personal site built with [Astro](https://astro.build): an about blurb, project
 - **Images:** put them in `src/assets/work/<file name>/` and reference them from the Markdown, for example
   `cover: ../../assets/work/my-project/photo.jpg`. Add more under `gallery:` with a caption each. Astro resizes them
   when it builds.
-- **Photography page:** every `.jpg` in `src/assets/photos/` shows on `/photos/`. Alt text and the six photos
-  featured on the home page are in `src/photos.ts`. Remove location data from phone photos before adding them.
 - **Portrait:** `src/assets/me/portrait-alice.jpg`.
 - **Name, email, links:** `src/site.ts`. The email and links appear under the about text once they're filled in.
 - **Look:** `src/styles/global.css`.
