@@ -1,10 +1,16 @@
 # ethanrjames.com
 
-A one-page personal site built with [Astro](https://astro.build).
+A personal site built with [Astro](https://astro.build): an about blurb, projects and experience.
 
 ## Editing
 
 - **About text:** `src/about.md` (Markdown).
+- **Projects and jobs:** one Markdown file each in `src/content/work/`. Each gets its own page at `/work/<file name>/`.
+  The fields at the top are described in `src/content.config.ts`. Set `kind: project` to list it under Projects or
+  `kind: job` for Experience, and set `sort` to the year it ended (newest shows first).
+- **Images:** put them in `src/assets/work/<file name>/` and reference them from the Markdown, for example
+  `cover: ../../assets/work/my-project/photo.jpg`. Add more under `gallery:` with a caption each. Astro resizes them
+  when it builds.
 - **Name, email, links:** `src/site.ts`. The email and links appear under the about text once they're filled in.
 - **Look:** `src/styles/global.css`.
 

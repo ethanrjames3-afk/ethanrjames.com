@@ -51,7 +51,44 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 1.25rem; }
 
-.page-head { padding: 18vh 0 3rem; }
+.page-head { padding: 14vh 0 2rem; }
+
+.meta { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-3); }
+
+/* Home page sections */
+.section { padding: 2.5rem 0 1rem; }
+.section-title {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-3); margin: 0 0 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule);
+}
+.cards, .rows { list-style: none; margin: 0; padding: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 2rem 1.5rem; }
+.card { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; }
+.card-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: var(--rule); margin-bottom: 0.6rem; }
+.card-img.contain { object-fit: contain; background: #fff; border: 1px solid var(--rule); }
+.card-title { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; letter-spacing: -0.01em; }
+.card-summary { font-size: 1rem; line-height: 1.45; color: var(--ink-2); margin-top: 0.2rem; }
+.card:hover .card-title { color: var(--accent); }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.row-main { display: flex; flex-direction: column; }
+.row-title { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; }
+.row:hover .row-title { color: var(--accent); }
+.row-years { white-space: nowrap; }
+
+/* Project and job pages */
+.entry { padding: 2.5rem 0 1rem; }
+.back { font-family: var(--sans); font-size: 0.9rem; margin: 0 0 3rem; }
+.back a { text-decoration: none; color: var(--ink-3); }
+.back a:hover { color: var(--accent); }
+.entry-head h1 { margin-bottom: 0.4rem; }
+.entry-head .meta { margin: 0 0 2rem; font-size: 1rem; }
+.entry-cover { display: block; width: 100%; height: auto; border-radius: 6px; margin: 0 0 2rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin: 0.35rem 0; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1.5rem; margin: 2.5rem 0 0; }
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border: 1px solid var(--rule); border-radius: 6px; }
+.gallery figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-3); margin-top: 0.5rem; }
 
 .lede, .lede-prose p { font-size: 1.35rem; line-height: 1.5; color: var(--ink-2); margin: 0 0 1rem; }
 

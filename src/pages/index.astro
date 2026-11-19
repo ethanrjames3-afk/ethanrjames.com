@@ -1,7 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site';
 import { Content as About } from '../about.md';
+
+const all = (await getCollection('work')).sort((a, b) => b.data.sort - a.data.sort);
+const projects = all.filter((e) => e.data.kind === 'project');
+const jobs = all.filter((e) => e.data.kind === 'job');
 ---
 
 <Base>
@@ -18,5 +24,52 @@ import { Content as About } from '../about.md';
         </p>
       )
     }
+  </section>
+
+  <section class="section" aria-labelledby="projects">
+    <h2 id="projects" class="section-title">Projects</h2>
+    <ul class="cards">
+      {
+        projects.map((p) => (
+          <li>
+            <a class="card" href={`/work/${p.id}/`}>
+              {p.data.cover && (
+                <Image
+                  src={p.data.cover}
+                  alt={p.data.coverAlt ?? ''}
+                  widths={[400, 800]}
+                  sizes="(min-width: 42rem) 20rem, 100vw"
+                  class:list={['card-img', p.data.coverFit]}
+                />
+              )}
+              <span class="card-title">{p.data.title}</span>
+              <span class="meta">
+                {p.data.org} · {p.data.years}
+              </span>
+              <span class="card-summary">{p.data.summary}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="experience">
+    <h2 id="experience" class="section-title">Experience</h2>
+    <ul class="rows">
+      {
+        jobs.map((j) => (
+          <li>
+            <a class="row" href={`/work/${j.id}/`}>
+              <span class="row-main">
+                <span class="row-title">{j.data.org}</span>
+                <span class="meta">{j.data.role}</span>
+              </span>
+              <span class="meta row-years">{j.data.years}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </Base>
