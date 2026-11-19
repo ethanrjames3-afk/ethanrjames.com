@@ -10,7 +10,7 @@ summary: Technical program manager for the Codec Avatar Decoder team, working to
 
 Since January 2025 I've been a technical program manager at Meta Reality Labs, through Magnit. I support the Codec Avatar Decoder team, which is building metric telepresence: immersive social presence indistinguishable from reality.
 
-- Run weekly sprint planning across the encoder, decoder and capture teams.
+- Ran weekly sprint planning across the encoder, decoder and capture teams.
 - Led a cross-functional team of 30+ people that fixed pose-tracking issues by training a new synthetic dense keypoint detector, then rolled it out across the training, capture and generation pipelines.
 - Coordinated a 5x reduction in generation time for the codec avatar generation pipeline.
 - Drove a new skeleton rig project, stalled for years, to completion in a matter of months.

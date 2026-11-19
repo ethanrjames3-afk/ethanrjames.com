@@ -22,7 +22,12 @@ const work = defineCollection({
       // 'contain' shows the whole cover on the home page card (good for diagrams); 'cover' crops to fill.
       coverFit: z.enum(['cover', 'contain']).default('cover'),
       gallery: z
-        .array(z.object({ src: image(), caption: z.string() }))
+        .array(z.object({
+            src: image(),
+            caption: z.string(),
+            // Optional link, e.g. a playable demo; opens in a new tab. Without it the image links to itself.
+            href: z.string().url().optional(),
+          }))
         .default([]),
     }),
 });

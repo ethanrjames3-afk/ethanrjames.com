@@ -46,7 +46,7 @@ const { Content } = await render(entry);
         <div class="gallery">
           {gallery.map((g) => (
             <figure>
-              <a href={g.src.src}>
+              <a href={g.href ?? g.src.src} target={g.href ? '_blank' : undefined} rel={g.href ? 'noopener' : undefined}>
                 <Image src={g.src} alt={g.caption} widths={[400, 800]} sizes="(min-width: 42rem) 20rem, 100vw" />
               </a>
               <figcaption>{g.caption}</figcaption>
