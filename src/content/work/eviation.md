@@ -23,6 +23,7 @@ I joined Eviation as a project engineer in September 2021, reporting directly to
 
 In September 2022 I became project manager for the powertrain, until December 2024.
 
+- Led the implementation of the quality management system.
 - Managed concept development and execution of a 1.5 MW electric airplane powertrain.
 - Coordinated supplier engagement.
 - Led the concepts for ground support and charging infrastructure.

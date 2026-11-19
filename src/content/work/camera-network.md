@@ -2,7 +2,7 @@
 title: Camera tracking network
 kind: project
 org: Booz Allen Hamilton Summer Games
-role: Mechanical Engineer Intern
+role: Mechanical Engineer / UI Developer Intern
 years: 2019
 sort: 2019
 summary: A distributed network of cameras for object recognition and person tracking, with an Android app.

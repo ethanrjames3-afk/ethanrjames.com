@@ -2,7 +2,7 @@
 title: GE Aviation at Southwest Airlines
 kind: job
 org: GE Aviation
-role: Field Engineer
+role: Fleet Data Management / Field Service Engineer Intern
 years: 2017
 sort: 2017
 summary: GE Aviation field engineer at Southwest Airlines' maintenance headquarters, keeping the CFM56 fleet running and preparing for the LEAP-1B.
@@ -19,7 +19,7 @@ gallery:
     caption: In the engine shop
 ---
 
-I was a field engineer for GE Aviation at Southwest Airlines' maintenance headquarters.
+In summer 2017 I interned with GE Aviation as a fleet data management and field service engineer, based at Southwest Airlines' maintenance headquarters.
 
 - Monitored engine data to maximize engine performance.
 - Managed the logistics of engine maintenance.

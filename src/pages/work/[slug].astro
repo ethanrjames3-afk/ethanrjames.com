@@ -4,7 +4,8 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('work');
+  // Entries with no text below the front matter get no page; they still show in the home page list.
+  const entries = await getCollection('work', (e) => Boolean(e.body?.trim()));
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

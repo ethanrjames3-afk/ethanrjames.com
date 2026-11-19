@@ -68,17 +68,20 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     <h2 id="experience" class="section-title">Experience</h2>
     <ul class="rows">
       {
-        jobs.map((j) => (
-          <li>
-            <a class="row" href={`/work/${j.id}/`}>
-              <span class="row-main">
-                <span class="row-title">{j.data.org}</span>
-                <span class="meta">{j.data.role}</span>
-              </span>
-              <span class="meta row-years">{j.data.years}</span>
-            </a>
-          </li>
-        ))
+        jobs.map((j) => {
+          const Row = j.body?.trim() ? 'a' : 'div';
+          return (
+            <li>
+              <Row class="row" href={Row === 'a' ? `/work/${j.id}/` : undefined}>
+                <span class="row-main">
+                  <span class="row-title">{j.data.org}</span>
+                  <span class="meta">{j.data.role}</span>
+                </span>
+                <span class="meta row-years">{j.data.years}</span>
+              </Row>
+            </li>
+          );
+        })
       }
     </ul>
   </section>

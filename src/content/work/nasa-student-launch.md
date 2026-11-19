@@ -39,7 +39,7 @@ gallery:
 
 The Vanderbilt Aerospace Design Lab are seven-time NASA Student Launch champions. That year we won the vehicle design award, given for the most innovative and creative vehicle design while maximizing safety.
 
-I was a payload and manufacturing engineer. After landing, the payload bay reorients itself, opens its doors and releases a drone from its charging station to take off.
+I was a payload and manufacturing engineer from August 2019 to March 2020, on the small team that designed, built and tested the drone's deployment system and its recharging station. After landing, the payload bay reorients itself, opens its doors and releases a drone from its charging station to take off.
 
 - I was integral to manufacturing, assembly, integration and testing of the payload and rocket subsystems.
 - I wrote detailed documentation proving the rocket's flight-worthiness: the PDR, CDR and FRR, all presented to NASA engineers.
