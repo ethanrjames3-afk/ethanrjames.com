@@ -144,4 +144,4 @@ video.entry-cover { width: auto; max-width: 100%; max-height: 75vh; margin-inlin
 .car-dots button::before { content: ''; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--rule); transition: background 0.2s, transform 0.2s; }
 .car-dots button[aria-current="true"]::before { background: var(--ink-2); transform: scale(1.25); }
 .car-dots button:hover::before { background: var(--accent); }
-.hobbies-label { margin: 2rem 0 0.75rem; }
+

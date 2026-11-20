@@ -58,47 +58,6 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     }
   </section>
 
-  <section class="section" aria-labelledby="background">
-    <h2 id="background" class="section-title">Background</h2>
-    <div class="prose">
-      <p>
-        I grew up a military brat, the son of an Air Force pilot and a nurse, mostly in Texas. I always wanted to help
-        my dad with projects in his workshop, whether that was building model airplanes and rockets or odd jobs around
-        the house.
-      </p>
-    </div>
-    <div class="bg-photos">
-      <figure>
-        <a href={astronaut.src}><Image src={astronaut} alt="Ethan as a kid, dressed as an astronaut" widths={[400, 750]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
-        <figcaption>Suited up as an astronaut</figcaption>
-      </figure>
-      <figure>
-        <a href={newspaper.src}><Image src={newspaper} alt="A 2002 Rockwall-Rowlett Morning News clipping of Ethan's dad assembling a radio-controlled plane while Ethan and his brother watch" widths={[400, 800, 1333]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
-        <figcaption>In the Rockwall-Rowlett Morning News at age 3, waiting for my dad's RC plane to take off</figcaption>
-      </figure>
-    </div>
-    <p class="scroller-label hobbies-label">Hobbies</p>
-    <div class="carousel" data-carousel>
-      <button type="button" class="car-btn prev" aria-label="Previous photo">‹</button>
-    <ul class="photo-strip car-track" tabindex="0" aria-label="Hobby photos">
-      {
-        hobbies.map((h) => (
-          <li>
-            <figure>
-              <a href={h.src.src}>
-                <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="22rem" />
-              </a>
-              <figcaption>{h.caption}</figcaption>
-            </figure>
-          </li>
-        ))
-      }
-    </ul>
-      <button type="button" class="car-btn next" aria-label="Next photo">›</button>
-    </div>
-    <div class="car-dots"></div>
-  </section>
-
   <section class="section" aria-labelledby="experience">
     <h2 id="experience" class="section-title">Experience</h2>
     <ul class="rows">
@@ -152,6 +111,50 @@ const jobs = all.filter((e) => e.data.kind === 'job');
       <button type="button" class="car-btn next" aria-label="Next project">›</button>
     </div>
     <div class="car-dots"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hobbies">
+    <h2 id="hobbies" class="section-title">Hobbies</h2>
+    <div class="carousel" data-carousel>
+      <button type="button" class="car-btn prev" aria-label="Previous photo">‹</button>
+    <ul class="photo-strip car-track" tabindex="0" aria-label="Hobby photos">
+      {
+        hobbies.map((h) => (
+          <li>
+            <figure>
+              <a href={h.src.src}>
+                <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="22rem" />
+              </a>
+              <figcaption>{h.caption}</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+      <button type="button" class="car-btn next" aria-label="Next photo">›</button>
+    </div>
+    <div class="car-dots"></div>
+  </section>
+
+  <section class="section" aria-labelledby="background">
+    <h2 id="background" class="section-title">Background</h2>
+    <div class="prose">
+      <p>
+        I grew up a military brat, the son of an Air Force pilot and a nurse, mostly in Texas. I always wanted to help
+        my dad with projects in his workshop, whether that was building model airplanes and rockets or odd jobs around
+        the house.
+      </p>
+    </div>
+    <div class="bg-photos">
+      <figure>
+        <a href={astronaut.src}><Image src={astronaut} alt="Ethan as a kid, dressed as an astronaut" widths={[400, 750]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
+        <figcaption>Suited up as an astronaut</figcaption>
+      </figure>
+      <figure>
+        <a href={newspaper.src}><Image src={newspaper} alt="A 2002 Rockwall-Rowlett Morning News clipping of Ethan's dad assembling a radio-controlled plane while Ethan and his brother watch" widths={[400, 800, 1333]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
+        <figcaption>In the Rockwall-Rowlett Morning News at age 3, waiting for my dad's RC plane to take off</figcaption>
+      </figure>
+    </div>
   </section>
   <script>
     document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((car) => {
