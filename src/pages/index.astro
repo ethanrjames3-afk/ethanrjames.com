@@ -77,17 +77,10 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         <figcaption>In the Rockwall-Rowlett Morning News at age 3, waiting for my dad's RC plane to take off</figcaption>
       </figure>
     </div>
-    <div class="prose hobbies-intro">
-      <p>Outside of work I'm into photography, snowboarding, hiking and video games, mostly PUBG, Halo and Call of Duty.</p>
-    </div>
-    <div class="scroller-head scroller-head--plain">
-      <span class="scroller-label">Hobbies</span>
-      <span class="scroller-btns">
-        <button type="button" class="scroll-btn" data-target="hobby-strip" data-dir="-1" aria-label="Scroll hobby photos left">←</button>
-        <button type="button" class="scroll-btn" data-target="hobby-strip" data-dir="1" aria-label="Scroll hobby photos right">→</button>
-      </span>
-    </div>
-    <ul class="photo-strip" id="hobby-strip" tabindex="0" aria-label="Hobby photos, scrolls sideways">
+    <p class="scroller-label hobbies-label">Hobbies</p>
+    <div class="carousel" data-carousel>
+      <button type="button" class="car-btn prev" aria-label="Previous photo">‹</button>
+    <ul class="photo-strip car-track" tabindex="0" aria-label="Hobby photos">
       {
         hobbies.map((h) => (
           <li>
@@ -101,6 +94,9 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         ))
       }
     </ul>
+      <button type="button" class="car-btn next" aria-label="Next photo">›</button>
+    </div>
+    <div class="car-dots"></div>
   </section>
 
   <section class="section" aria-labelledby="experience">
@@ -126,14 +122,10 @@ const jobs = all.filter((e) => e.data.kind === 'job');
   </section>
 
   <section class="section" aria-labelledby="projects">
-    <div class="section-title scroller-head">
-      <h2 id="projects">Projects</h2>
-      <span class="scroller-btns">
-        <button type="button" class="scroll-btn" data-target="project-cards" data-dir="-1" aria-label="Scroll projects left">←</button>
-        <button type="button" class="scroll-btn" data-target="project-cards" data-dir="1" aria-label="Scroll projects right">→</button>
-      </span>
-    </div>
-    <ul class="cards" id="project-cards" tabindex="0" aria-label="Projects, scrolls sideways">
+    <h2 id="projects" class="section-title">Projects</h2>
+    <div class="carousel" data-carousel>
+      <button type="button" class="car-btn prev" aria-label="Previous project">‹</button>
+    <ul class="cards car-track" tabindex="0" aria-label="Projects">
       {
         projects.map((p) => (
           <li>
@@ -157,23 +149,82 @@ const jobs = all.filter((e) => e.data.kind === 'job');
         ))
       }
     </ul>
+      <button type="button" class="car-btn next" aria-label="Next project">›</button>
+    </div>
+    <div class="car-dots"></div>
   </section>
   <script>
-    document.querySelectorAll<HTMLElement>('#project-cards, #hobby-strip').forEach((track) => {
-      const btns = document.querySelectorAll<HTMLButtonElement>(`.scroll-btn[data-target="${track.id}"]`);
-      const update = () => {
-        const max = track.scrollWidth - track.clientWidth - 2;
-        btns.forEach((b) => (b.disabled = b.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max));
+    document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((car) => {
+      const track = car.querySelector<HTMLElement>('.car-track')!;
+      const items = Array.from(track.children) as HTMLElement[];
+      const prev = car.querySelector<HTMLButtonElement>('.car-btn.prev')!;
+      const next = car.querySelector<HTMLButtonElement>('.car-btn.next')!;
+      const dotsEl = car.nextElementSibling as HTMLElement;
+      const label = track.getAttribute('aria-label') ?? 'item';
+      const dots = items.map((li, i) => {
+        const d = document.createElement('button');
+        d.type = 'button';
+        const name = li.querySelector('.card-title, figcaption')?.textContent?.trim();
+        d.setAttribute('aria-label', `${label}: go to ${name ?? i + 1}`);
+        d.addEventListener('click', () => go(i));
+        dotsEl.appendChild(d);
+        return d;
+      });
+      const left = (i: number) => items[i].offsetLeft - items[0].offsetLeft;
+      const max = () => track.scrollWidth - track.clientWidth;
+      const current = () => {
+        if (track.scrollLeft >= max() - 2) return items.length - 1;
+        let best = 0;
+        items.forEach((_, i) => { if (Math.abs(left(i) - track.scrollLeft) < Math.abs(left(best) - track.scrollLeft)) best = i; });
+        return best;
       };
-      btns.forEach((b) =>
-        b.addEventListener('click', () => {
-          const step = (track.querySelector('li')?.getBoundingClientRect().width ?? 280) + 24;
-          track.scrollBy({ left: Number(b.dataset.dir) * step, behavior: 'smooth' });
-        }),
-      );
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const go = (i: number) => {
+        track.scrollTo({
+          left: Math.min(left(Math.max(0, Math.min(items.length - 1, i))), max()),
+          behavior: reduce.matches || document.hidden ? 'auto' : 'smooth',
+        });
+        setTimeout(update, 600);
+      };
+      const update = () => {
+        const c = current();
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= max() - 2;
+        dots.forEach((d, i) => d.setAttribute('aria-current', String(i === c)));
+        const img = items[0].querySelector('img');
+        if (img?.offsetHeight) car.style.setProperty('--car-mid', `${img.offsetHeight / 2}px`);
+      };
+      prev.addEventListener('click', () => go(current() - 1));
+      next.addEventListener('click', () => go(current() + 1));
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); }
+      });
+
+      // Drag with a mouse; touch and trackpads scroll natively.
+      let startX = 0, startLeft = 0, dragging = false, moved = false;
+      track.querySelectorAll('img, a').forEach((el) => el.setAttribute('draggable', 'false'));
+      track.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        dragging = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+      });
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add('dragging'); }
+        if (moved) track.scrollLeft = startLeft - dx;
+      });
+      window.addEventListener('pointerup', () => {
+        if (!dragging) return;
+        dragging = false;
+        if (moved) { track.classList.remove('dragging'); go(current()); setTimeout(() => (moved = false), 0); }
+      });
+      track.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+
       track.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
       window.addEventListener('load', update);
+      items[0].querySelector('img')?.addEventListener('load', update);
       update();
     });
   </script>
