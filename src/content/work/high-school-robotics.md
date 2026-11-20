@@ -14,10 +14,10 @@ gallery:
     caption: In the team's lab
 ---
 
-In high school I was on Black Hawk Robotics, FIRST Robotics Competition team 3310.
+In 2015 and 2016 I was on Black Hawk Robotics, FIRST Robotics Competition [team 3310](https://www.thebluealliance.com/team/3310/history).
 
-- Drove the robot in 2015, when we won the Lubbock Regional.
-- Was pit captain in 2016, when we won the Arkansas Regional and the Lubbock Regional again.
+- Drove the robot in [2015](https://www.thebluealliance.com/team/3310/2015), when we won the [Lubbock Regional](https://www.thebluealliance.com/event/2015txlu).
+- Was pit captain in [2016](https://www.thebluealliance.com/team/3310/2016), when we won the [Arkansas Regional](https://www.thebluealliance.com/event/2016arlr) and the [Lubbock Regional](https://www.thebluealliance.com/event/2016txlu) again.
 
 This is where I learned about iterative design, and about working long hours as a team toward a common goal.
 
