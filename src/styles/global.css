@@ -10,6 +10,7 @@
   --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --measure: 42rem;
+  --page: 72rem;
   color-scheme: light dark;
 }
 
@@ -46,7 +47,9 @@ main { flex: 1; }
 a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
-.wrap { width: 100%; max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+.wrap { width: 100%; max-width: calc(var(--page) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+:root { --gutter: clamp(1.25rem, 4vw, 3rem); }
+.prose, .lede-prose { max-width: var(--measure); }
 .measure { max-width: var(--measure); }
 
 h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 1.25rem; }
@@ -145,3 +148,16 @@ video.entry-cover { width: auto; max-width: 100%; max-height: 75vh; margin-inlin
 .car-dots button[aria-current="true"]::before { background: var(--ink-2); transform: scale(1.25); }
 .car-dots button:hover::before { background: var(--accent); }
 
+
+/* Wider screens: use the width instead of one narrow column */
+.entry { max-width: 52rem; }
+@media (min-width: 56rem) {
+  .home-head { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 3rem; align-items: center; }
+  .home-head > .portrait { grid-row: 1 / span 3; width: 12rem; height: 12rem; margin: 0; }
+  .home-head > :not(.portrait) { grid-column: 2; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; }
+  .cards > li { flex-basis: 18rem; }
+  .photo-strip img { height: 20rem; }
+  .bg-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 3rem; align-items: start; }
+  .bg-grid .bg-photos { margin-top: 0; }
+}
