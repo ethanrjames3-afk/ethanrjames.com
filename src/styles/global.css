@@ -84,7 +84,7 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
 .row-main { display: flex; flex-direction: column; }
 .row-title { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; }
-.row:hover .row-title { color: var(--accent); }
+a.row:hover .row-title { color: var(--accent); }
 .row-years { white-space: nowrap; }
 
 /* Project and job pages */
