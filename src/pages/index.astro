@@ -7,26 +7,38 @@ import { Content as About } from '../about.md';
 import portrait from '../assets/me/portrait-alice.jpg';
 import astronaut from '../assets/me/astronaut.jpg';
 import newspaper from '../assets/me/newspaper-2002.jpg';
-import grandCanyon from '../assets/hobbies/grand-canyon.jpg';
-import grandCanyon2 from '../assets/hobbies/grand-canyon-2.jpg';
-import canyonTrail from '../assets/hobbies/canyon-trail.jpg';
-import lift from '../assets/hobbies/lift.jpg';
-import slope from '../assets/hobbies/slope.jpg';
-import oculus from '../assets/hobbies/oculus.jpg';
-import oneWtc from '../assets/hobbies/one-wtc.jpg';
-import nycBridges from '../assets/hobbies/nyc-bridges.jpg';
-import urbanLight from '../assets/hobbies/urban-light.jpg';
+// Photos are imported with Vite's glob so adding one is just a file plus a line below.
+const pics = import.meta.glob<{ default: ImageMetadata }>('../assets/{hobbies,photography}/*.jpg', { eager: true });
+const pic = (path: string) => pics[`../assets/${path}.jpg`].default;
 
+// Captions: where it was taken · what it was shot on. No dates.
 const hobbies = [
-  { src: grandCanyon, caption: 'Hiking the Grand Canyon', alt: 'The Colorado River deep in the Grand Canyon' },
-  { src: grandCanyon2, caption: 'Grand Canyon', alt: 'A sandstone spire on a Grand Canyon rim' },
-  { src: canyonTrail, caption: 'Hiking', alt: 'A trail winding into a canyon' },
-  { src: lift, caption: 'Snowboarding', alt: 'A chairlift above a snowy run, in black and white' },
-  { src: slope, caption: 'Snowboarding', alt: 'Tracks on a steep snow slope, in black and white' },
-  { src: oculus, caption: 'Photography: the Oculus, New York', alt: "The ribbed white interior of New York's Oculus, in black and white" },
-  { src: oneWtc, caption: 'Photography: One World Trade Center', alt: 'One World Trade Center from below, in black and white' },
-  { src: nycBridges, caption: 'Photography: the Manhattan and Brooklyn bridges', alt: 'The Manhattan and Brooklyn bridges at dusk' },
-  { src: urbanLight, caption: 'Photography: Urban Light, Los Angeles', alt: 'Rows of antique street lamps at Urban Light' },
+  { src: pic('hobbies/grand-canyon'), caption: 'Hiking the Grand Canyon · Samsung Galaxy Note 4', alt: 'The Colorado River deep in the Grand Canyon' },
+  { src: pic('hobbies/grand-canyon-2'), caption: 'Grand Canyon · Samsung Galaxy Note 4', alt: 'A sandstone spire on a Grand Canyon rim' },
+  { src: pic('hobbies/canyon-trail'), caption: 'Hiking down into the Grand Canyon', alt: 'A trail winding down into a canyon' },
+  { src: pic('hobbies/snow-clouds'), caption: 'Snowboarding at Whistler · Google Pixel 7', alt: 'A snowy ridge above the clouds at Whistler' },
+  { src: pic('hobbies/slope'), caption: 'Snowboarding at Whistler · Google Pixel 2 XL', alt: 'Tracks on a steep snow slope, in black and white' },
+  { src: pic('hobbies/lift'), caption: 'Snowboarding · Samsung Galaxy Note 4', alt: 'A chairlift above a snowy run, in black and white' },
+];
+
+const photography = [
+  { src: pic('photography/rainier'), caption: 'Mount Rainier, Washington · Samsung Galaxy S10+', alt: 'Snow-covered Mount Rainier above green ridges' },
+  { src: pic('photography/zurich-night'), caption: 'Zurich, Switzerland · Google Pixel 7', alt: "Zurich's old town and the Grossmünster reflected in the river at night" },
+  { src: pic('photography/kilauea'), caption: 'Kīlauea lava meeting the ocean, Hawaii · Google Pixel XL', alt: 'Steam rising where lava flows into the ocean, seen from the air' },
+  { src: pic('photography/oculus'), caption: 'The Oculus, New York · Google Pixel XL', alt: "The ribbed white interior of New York's Oculus, in black and white" },
+  { src: pic('photography/milky-way'), caption: 'Olympic Peninsula, Washington · Google Pixel 5', alt: 'The Milky Way over a dark treeline' },
+  { src: pic('photography/eiffel'), caption: 'Paris · Google Pixel 7', alt: 'The Eiffel Tower in black and white' },
+  { src: pic('photography/zion'), caption: 'Zion National Park, Utah · Samsung Galaxy Note 4', alt: 'Red canyon walls above a green valley' },
+  { src: pic('photography/milan'), caption: 'Galleria Vittorio Emanuele II, Milan · Google Pixel 7', alt: "The glass-roofed arcade of Milan's Galleria" },
+  { src: pic('photography/one-wtc'), caption: 'One World Trade Center, New York · Google Pixel XL', alt: 'One World Trade Center from below, in black and white' },
+  { src: pic('photography/above-clouds'), caption: 'Above the clouds over the Pacific · Google Pixel 7', alt: 'An orange sunrise line above a sea of clouds' },
+  { src: pic('photography/half-dome'), caption: 'Yosemite National Park · Samsung WB30F', alt: 'A granite dome under a blue sky with clouds' },
+  { src: pic('photography/tower-bridge'), caption: 'Tower Bridge, London · Google Pixel 2 XL', alt: 'Tower Bridge over the Thames' },
+  { src: pic('photography/grand-central'), caption: 'Grand Central Terminal, New York · Google Pixel XL', alt: "Crowds in Grand Central's main concourse" },
+  { src: pic('photography/amsterdam'), caption: 'Amsterdam · Google Pixel 2 XL', alt: 'An Amsterdam canal lit up at night' },
+  { src: pic('photography/chicago'), caption: 'Cloud Gate, Chicago · Google Pixel XL', alt: "Chicago's Cloud Gate sculpture in front of the skyline" },
+  { src: pic('photography/nyc-bridges'), caption: 'The Manhattan and Brooklyn bridges, New York · Google Pixel 5', alt: 'The Manhattan and Brooklyn bridges at dusk' },
+  { src: pic('photography/urban-light'), caption: 'Urban Light, Los Angeles · Google Pixel 2 XL', alt: 'Rows of antique street lamps at Urban Light' },
 ];
 
 const all = (await getCollection('work')).sort((a, b) => b.data.sort - a.data.sort);
@@ -115,11 +127,32 @@ const jobs = all.filter((e) => e.data.kind === 'job');
 
   <section class="section" aria-labelledby="hobbies">
     <h2 id="hobbies" class="section-title">Hobbies</h2>
+    <p class="scroller-label sub-label">Hiking and snowboarding</p>
     <div class="carousel" data-carousel>
       <button type="button" class="car-btn prev" aria-label="Previous photo">‹</button>
     <ul class="photo-strip car-track" tabindex="0" aria-label="Hobby photos">
       {
         hobbies.map((h) => (
+          <li>
+            <figure>
+              <a href={h.src.src}>
+                <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="22rem" />
+              </a>
+              <figcaption>{h.caption}</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+      <button type="button" class="car-btn next" aria-label="Next photo">›</button>
+    </div>
+    <div class="car-dots"></div>
+    <p class="scroller-label sub-label">Photography</p>
+    <div class="carousel" data-carousel>
+      <button type="button" class="car-btn prev" aria-label="Previous photo">‹</button>
+    <ul class="photo-strip car-track" tabindex="0" aria-label="Photography">
+      {
+        photography.map((h) => (
           <li>
             <figure>
               <a href={h.src.src}>
