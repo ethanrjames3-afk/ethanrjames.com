@@ -161,5 +161,3 @@ video.entry-cover { width: auto; max-width: 100%; max-height: 75vh; margin-inlin
   .bg-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 3rem; align-items: start; }
   .bg-grid .bg-photos { margin-top: 0; }
 }
-.sub-label { margin: 0 0 0.75rem; }
-.car-dots + .sub-label { margin-top: 2rem; }
