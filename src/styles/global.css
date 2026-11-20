@@ -105,6 +105,23 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
 video.entry-cover { width: auto; max-width: 100%; max-height: 75vh; margin-inline: auto; }
 .prose h2 { font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin: 2.5rem 0 0.75rem; }
 .prose ul { padding-left: 1.2rem; }
+.bg-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; align-items: start; }
+.bg-photos figure { margin: 0; }
+.bg-photos img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.hobbies-intro { margin-top: 1.75rem; }
+.scroller-head--plain { margin: 0.5rem 0 0.75rem; }
+.scroller-label { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.photo-strip {
+  list-style: none; margin: 0; padding: 0 0 1rem; display: flex; gap: 1rem; overflow-x: auto;
+  overscroll-behavior-x: contain; scroll-snap-type: x mandatory;
+  scrollbar-width: thin; scrollbar-color: var(--rule) transparent;
+}
+.photo-strip > li { flex: 0 0 auto; scroll-snap-align: start; }
+.photo-strip figure { margin: 0; }
+.photo-strip img { display: block; height: 16rem; width: auto; max-width: 80vw; object-fit: cover; border-radius: 6px; }
+.photo-strip figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-3); margin-top: 0.5rem; max-width: 22rem; }
+.photo-strip:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.bg-photos figcaption { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-3); margin-top: 0.5rem; line-height: 1.4; }
 .prose li { margin: 0.35rem 0; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1.5rem; margin: 2.5rem 0 0; }
 .gallery figure { margin: 0; }

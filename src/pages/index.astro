@@ -5,6 +5,29 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../site';
 import { Content as About } from '../about.md';
 import portrait from '../assets/me/portrait-alice.jpg';
+import astronaut from '../assets/me/astronaut.jpg';
+import newspaper from '../assets/me/newspaper-2002.jpg';
+import grandCanyon from '../assets/hobbies/grand-canyon.jpg';
+import grandCanyon2 from '../assets/hobbies/grand-canyon-2.jpg';
+import canyonTrail from '../assets/hobbies/canyon-trail.jpg';
+import lift from '../assets/hobbies/lift.jpg';
+import slope from '../assets/hobbies/slope.jpg';
+import oculus from '../assets/hobbies/oculus.jpg';
+import oneWtc from '../assets/hobbies/one-wtc.jpg';
+import nycBridges from '../assets/hobbies/nyc-bridges.jpg';
+import urbanLight from '../assets/hobbies/urban-light.jpg';
+
+const hobbies = [
+  { src: grandCanyon, caption: 'Hiking the Grand Canyon', alt: 'The Colorado River deep in the Grand Canyon' },
+  { src: grandCanyon2, caption: 'Grand Canyon', alt: 'A sandstone spire on a Grand Canyon rim' },
+  { src: canyonTrail, caption: 'Hiking', alt: 'A trail winding into a canyon' },
+  { src: lift, caption: 'Snowboarding', alt: 'A chairlift above a snowy run, in black and white' },
+  { src: slope, caption: 'Snowboarding', alt: 'Tracks on a steep snow slope, in black and white' },
+  { src: oculus, caption: 'Photography: the Oculus, New York', alt: "The ribbed white interior of New York's Oculus, in black and white" },
+  { src: oneWtc, caption: 'Photography: One World Trade Center', alt: 'One World Trade Center from below, in black and white' },
+  { src: nycBridges, caption: 'Photography: the Manhattan and Brooklyn bridges', alt: 'The Manhattan and Brooklyn bridges at dusk' },
+  { src: urbanLight, caption: 'Photography: Urban Light, Los Angeles', alt: 'Rows of antique street lamps at Urban Light' },
+];
 
 const all = (await getCollection('work')).sort((a, b) => b.data.sort - a.data.sort);
 const projects = all.filter((e) => e.data.kind === 'project');
@@ -35,6 +58,51 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     }
   </section>
 
+  <section class="section" aria-labelledby="background">
+    <h2 id="background" class="section-title">Background</h2>
+    <div class="prose">
+      <p>
+        I grew up a military brat, the son of an Air Force pilot and a nurse, mostly in Texas. I always wanted to help
+        my dad with projects in his workshop, whether that was building model airplanes and rockets or odd jobs around
+        the house.
+      </p>
+    </div>
+    <div class="bg-photos">
+      <figure>
+        <a href={astronaut.src}><Image src={astronaut} alt="Ethan as a kid, dressed as an astronaut" widths={[400, 750]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
+        <figcaption>Suited up as an astronaut</figcaption>
+      </figure>
+      <figure>
+        <a href={newspaper.src}><Image src={newspaper} alt="A 2002 Rockwall-Rowlett Morning News clipping of Ethan's dad assembling a radio-controlled plane while Ethan and his brother watch" widths={[400, 800, 1333]} sizes="(min-width: 42rem) 20rem, 50vw" /></a>
+        <figcaption>In the Rockwall-Rowlett Morning News at age 3, waiting for my dad's RC plane to take off</figcaption>
+      </figure>
+    </div>
+    <div class="prose hobbies-intro">
+      <p>Outside of work I'm into photography, snowboarding and hiking.</p>
+    </div>
+    <div class="scroller-head scroller-head--plain">
+      <span class="scroller-label">Hobbies</span>
+      <span class="scroller-btns">
+        <button type="button" class="scroll-btn" data-target="hobby-strip" data-dir="-1" aria-label="Scroll hobby photos left">←</button>
+        <button type="button" class="scroll-btn" data-target="hobby-strip" data-dir="1" aria-label="Scroll hobby photos right">→</button>
+      </span>
+    </div>
+    <ul class="photo-strip" id="hobby-strip" tabindex="0" aria-label="Hobby photos, scrolls sideways">
+      {
+        hobbies.map((h) => (
+          <li>
+            <figure>
+              <a href={h.src.src}>
+                <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="22rem" />
+              </a>
+              <figcaption>{h.caption}</figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
   <section class="section" aria-labelledby="experience">
     <h2 id="experience" class="section-title">Experience</h2>
     <ul class="rows">
@@ -61,8 +129,8 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     <div class="section-title scroller-head">
       <h2 id="projects">Projects</h2>
       <span class="scroller-btns">
-        <button type="button" class="scroll-btn" data-dir="-1" aria-label="Scroll projects left">←</button>
-        <button type="button" class="scroll-btn" data-dir="1" aria-label="Scroll projects right">→</button>
+        <button type="button" class="scroll-btn" data-target="project-cards" data-dir="-1" aria-label="Scroll projects left">←</button>
+        <button type="button" class="scroll-btn" data-target="project-cards" data-dir="1" aria-label="Scroll projects right">→</button>
       </span>
     </div>
     <ul class="cards" id="project-cards" tabindex="0" aria-label="Projects, scrolls sideways">
@@ -91,9 +159,8 @@ const jobs = all.filter((e) => e.data.kind === 'job');
     </ul>
   </section>
   <script>
-    const track = document.getElementById('project-cards');
-    const btns = document.querySelectorAll<HTMLButtonElement>('.scroll-btn');
-    if (track) {
+    document.querySelectorAll<HTMLElement>('#project-cards, #hobby-strip').forEach((track) => {
+      const btns = document.querySelectorAll<HTMLButtonElement>(`.scroll-btn[data-target="${track.id}"]`);
       const update = () => {
         const max = track.scrollWidth - track.clientWidth - 2;
         btns.forEach((b) => (b.disabled = b.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max));
@@ -106,7 +173,8 @@ const jobs = all.filter((e) => e.data.kind === 'job');
       );
       track.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
+      window.addEventListener('load', update);
       update();
-    }
+    });
   </script>
 </Base>
