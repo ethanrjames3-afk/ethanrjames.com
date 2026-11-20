@@ -151,7 +151,9 @@ video.entry-cover { width: auto; max-width: 100%; max-height: 75vh; margin-inlin
 
 
 /* Wider screens: use the width instead of one narrow column */
-.entry { max-width: 52rem; }
+.entry { max-width: 48rem; margin-inline: auto; }
+.entry .prose { max-width: none; }
+body:has(.entry) .site-footer .wrap { max-width: calc(48rem + 2 * var(--gutter)); }
 @media (min-width: 56rem) {
   .home-head { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 3rem; align-items: center; }
   .home-head > .portrait { grid-row: 1 / span 3; width: 12rem; height: 12rem; margin: 0; }
