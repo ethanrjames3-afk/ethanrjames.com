@@ -9,6 +9,9 @@ summary: Technical program manager for Codec Avatars, which Meta announced at Co
 cover: ../../assets/work/meta-reality-labs/hologram-call.jpg
 coverAlt: A WhatsApp call on a phone showing the caller's photorealistic Hologram
 gallery:
+  - src: ../../assets/work/meta-reality-labs/caller-glasses.jpg
+    caption: The caller wears Meta Ray-Ban Display; the person he's calling sees his Hologram, above
+    href: https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/
   - src: ../../assets/work/meta-reality-labs/mhr.jpg
     caption: The Momentum Human Rig at several levels of detail
     href: https://facebookresearch.github.io/MHR
