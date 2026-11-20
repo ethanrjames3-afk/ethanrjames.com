@@ -10,7 +10,7 @@ cover: ../../assets/work/eviation/alice-first-flight.jpg
 coverAlt: Eviation's Alice electric aircraft lifting off on its first flight
 gallery:
   - src: ../../assets/work/eviation/alice-hangar.jpg
-    caption: Alice in the hangar
+    caption: Alice in the hangar with Eviation's founder
   - src: ../../assets/me/portrait-alice.jpg
     caption: Me with Alice
 ---
