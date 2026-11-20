@@ -65,7 +65,22 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(2rem, 6vw, 3re
   color: var(--ink-3); margin: 0 0 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule);
 }
 .cards, .rows { list-style: none; margin: 0; padding: 0; }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 2rem 1.5rem; }
+.cards {
+  display: flex; gap: 1.5rem; overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: 0; padding-bottom: 1rem;
+  scrollbar-width: thin; scrollbar-color: var(--rule) transparent;
+}
+.cards > li { flex: 0 0 min(17rem, 80%); scroll-snap-align: start; }
+.cards:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.scroller-head { display: flex; justify-content: space-between; align-items: center; }
+.scroller-head h2 { font: inherit; letter-spacing: inherit; margin: 0; }
+.scroller-btns { display: flex; gap: 0.4rem; }
+.scroll-btn {
+  font: 500 0.95rem/1 var(--sans); color: var(--ink-2); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; width: 2rem; height: 2rem; cursor: pointer;
+}
+.scroll-btn:hover:not(:disabled) { color: var(--accent); border-color: currentColor; }
+.scroll-btn:disabled { opacity: 0.35; cursor: default; }
 .card { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; }
 .card-img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: 6px; background: var(--rule); margin-bottom: 0.6rem; }
 .card-img.thumb { object-position: 50% 25%; }
