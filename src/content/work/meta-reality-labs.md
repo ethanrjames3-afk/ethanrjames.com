@@ -5,12 +5,12 @@ org: Meta Reality Labs
 role: Technical Program Manager (via Magnit)
 years: 2025–2026
 sort: 2026.5
-summary: Technical program manager for Codec Avatars, which Meta announced at Connect 2026 as Hologram, a photorealistic, real-time version of you for calls.
+summary: Technical program manager for Codec Avatars, which Meta announced at Connect 2026 as Holograms: photorealistic, real-time versions of you for calls.
 cover: ../../assets/work/meta-reality-labs/hologram-call.jpg
-coverAlt: A WhatsApp call on a phone showing the caller's photorealistic Hologram
+coverAlt: A WhatsApp call on a phone showing the caller as a photorealistic, real-time avatar
 gallery:
   - src: ../../assets/work/meta-reality-labs/caller-glasses.jpg
-    caption: The caller wears Meta Ray-Ban Display; the person he's calling sees his Hologram, above
+    caption: The caller wears Meta Ray-Ban Display; the person he's calling sees the photorealistic version of him above
     href: https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/
   - src: ../../assets/work/meta-reality-labs/mhr.jpg
     caption: The Momentum Human Rig at several levels of detail
@@ -19,13 +19,13 @@ gallery:
 
 From January 2025 through the end of 2026 I'm a technical program manager at Meta Reality Labs, through Magnit. I support the Codec Avatar Decoder team, which is building metric telepresence: immersive social presence indistinguishable from reality.
 
-At Connect 2026, Meta [announced this work](https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/) as **Hologram**: a photorealistic, real-time version of you that the people you call can see. You make one with a quick capture on your phone. It's coming first to WhatsApp calls on Meta Ray-Ban Display, then to the Meta VR Glasses next spring.
+At Connect 2026, Meta [announced this work](https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/) as **Holograms**: photorealistic, real-time versions of you that the people you call can see. You make one with a quick capture on your phone. They're coming first to WhatsApp calls on Meta Ray-Ban Display, then to the Meta VR Glasses next spring.
 
 - Ran weekly sprint planning across the encoder, decoder and capture teams.
 - Led a cross-functional team of 30+ people that fixed pose-tracking issues by training a new synthetic dense keypoint detector, then rolled it out across the training, capture and generation pipelines.
 - Coordinated a 5x reduction in generation time for the Codec Avatar generation pipeline.
 - Drove a new skeleton rig project, stalled for years, to completion in a matter of months. Meta open-sourced it as the [Momentum Human Rig](https://facebookresearch.github.io/MHR) (MHR) in November 2025, as the body model behind [SAM 3D Body](https://ai.meta.com/blog/sam-3d/).
-- For the last six months I've also worked with the capture team, helping shape the capture and generation experience: a user's first experience with their own Hologram.
+- For the last six months I've also worked with the capture team, helping shape the capture and generation experience: a user's first experience with Holograms.
 
 ## Coverage
 
