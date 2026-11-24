@@ -23,9 +23,9 @@ At Connect 2026, Meta [announced this work](https://about.fb.com/news/2026/09/ne
 
 - Ran weekly sprint planning across the encoder, decoder and capture teams.
 - Led a cross-functional team of 30+ people that fixed pose-tracking issues by training a new synthetic dense keypoint detector, then rolled it out across the training, capture and generation pipelines.
-- Coordinated a 5x reduction in generation time for the codec avatar generation pipeline.
+- Coordinated a 5x reduction in generation time for the Codec Avatar generation pipeline.
 - Drove a new skeleton rig project, stalled for years, to completion in a matter of months. Meta open-sourced it as the [Momentum Human Rig](https://facebookresearch.github.io/MHR) (MHR) in November 2025, as the body model behind [SAM 3D Body](https://ai.meta.com/blog/sam-3d/).
-- For the last six months I've also worked with the capture team, helping shape the capture and generation experience: a user's first experience with their own hologram.
+- For the last six months I've also worked with the capture team, helping shape the capture and generation experience: a user's first experience with their own Hologram.
 
 ## Coverage
 
