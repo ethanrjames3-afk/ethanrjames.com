@@ -5,7 +5,7 @@ org: Meta Reality Labs
 role: Technical Program Manager (via Magnit)
 years: 2025–2026
 sort: 2026.5
-summary: Technical program manager for Codec Avatars, which Meta announced at Connect 2026 as Holograms: photorealistic, real-time versions of you for calls.
+summary: Technical program manager for Codec Avatars, which Meta announced at Connect 2026 as Holograms, photorealistic and real-time versions of you for calls.
 cover: ../../assets/work/meta-reality-labs/hologram-call.jpg
 coverAlt: A WhatsApp call on a phone showing the caller as a photorealistic, real-time avatar
 gallery:
